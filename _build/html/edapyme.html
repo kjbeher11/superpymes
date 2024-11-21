@@ -1,0 +1,1858 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exploración de datos &#8212; Superintendecia</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'edapyme';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Modelos" href="EDA_PYMES%20%282%29.html" />
+    <link rel="prev" title="Proyecto Superintendencia PYMEs" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Superintendecia - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Superintendecia - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Proyecto Superintendencia PYMEs
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exploración de datos</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="EDA_PYMES%20%282%29.html">Modelos</a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fedapyme.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/edapyme.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exploración de datos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exploración de datos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pymes-colombia">Pymes Colombia</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-las-variables">Definición de las variables:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias">Librerias</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general">Descripción General</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-categoricas">Variables Categoricas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-numericas">Variables Númericas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#liquidez">Liquidez</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rentabilidad">Rentabilidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#endeudamiento">Endeudamiento</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-objetivo">Variable objetivo</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformar-a-intervalos">Transformar a Intervalos</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exploracion-de-datos">
+<h1>Exploración de datos<a class="headerlink" href="#exploracion-de-datos" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="pymes-colombia">
+<h1>Pymes Colombia<a class="headerlink" href="#pymes-colombia" title="Link to this heading">#</a></h1>
+<p>El proyecto se centra en desarrollar modelos de clasificación basados en Machine Learning para identificar PYMEs colombianas con desempeño financiero sobresaliente. Esto incluye analizar variables de liquidez, rentabilidad, endeudamiento y factores macroeconómicos, abordando desafíos como la influencia de la pandemia y procesos de reestructuración. El objetivo es crear benchmarks más precisos por región y sector, que puedan asistir a tomadores de decisiones en financiación e inversión.</p>
+<section id="definicion-de-las-variables">
+<h2>Definición de las variables:<a class="headerlink" href="#definicion-de-las-variables" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Cantidad de años de la empresa</strong>: Número de años desde la creación de la empresa.</p></li>
+<li><p><strong>Fecha de Corte</strong>: Fecha en la que se realizó el análisis o registro financiero.</p></li>
+<li><p><strong>Total de activos (Assets)</strong>: Valor total de los recursos controlados por la empresa.</p></li>
+<li><p><strong>Total pasivos (Liabilities)</strong>: Obligaciones financieras totales de la empresa.</p></li>
+<li><p><strong>Razón corriente</strong>: Indicador de liquidez; relación entre activos corrientes y pasivos corrientes.</p></li>
+<li><p><strong>Rotación inventario producto terminado</strong>: Frecuencia con la que se vende y reemplaza el inventario de productos terminados.</p></li>
+<li><p><strong>Rotación cartera</strong>: Velocidad con la que se recuperan las cuentas por cobrar.</p></li>
+<li><p><strong>Rotación proveedores</strong>: Tiempo promedio que tarda la empresa en pagar a sus proveedores.</p></li>
+<li><p><strong>Productividad KTNO</strong>: Indicador de eficiencia, puede representar la productividad del capital de trabajo neto operativo.</p></li>
+<li><p><strong>ROA (Return on Assets)</strong>: Rentabilidad sobre los activos, mide la eficiencia en el uso de los activos para generar utilidades.</p></li>
+<li><p><strong>ROE (Return on Equity)</strong>: Rentabilidad sobre el patrimonio, mide la ganancia generada sobre el capital de los propietarios.</p></li>
+<li><p><strong>Nivel de endeudamiento</strong>: Proporción de deuda en relación con los activos totales.</p></li>
+<li><p><strong>Generación Efectivo</strong>: Cantidad de efectivo generado por las operaciones de la empresa.</p></li>
+<li><p><strong>FLC (Flujo de Caja Libre)</strong>: Efectivo disponible después de cubrir los gastos operativos y de inversión.</p></li>
+<li><p><strong>FDC/FLC</strong>: Relación entre flujo de caja disponible y flujo de caja libre, indicador de sostenibilidad.</p></li>
+<li><p><strong>SD (Servicio de Deuda)</strong>: Recursos destinados al pago de intereses y principal de las deudas.</p></li>
+<li><p><strong>FDC (Flujo de Caja Disponible)</strong>: Flujo de efectivo después de operaciones y reinversiones mínimas.</p></li>
+<li><p><strong>Generación FLC</strong>: Tasa o métrica relacionada con la generación de flujo de caja libre.</p></li>
+<li><p><strong>Tasa de Desempleo</strong>: Porcentaje de la población económicamente activa que está desempleada.</p></li>
+<li><p><strong>Tasa de Ocupación</strong>: Porcentaje de la población económicamente activa que tiene empleo.</p></li>
+<li><p><strong>PIB</strong>: Producto Interno Bruto nacional, indicador de actividad económica.</p></li>
+<li><p><strong>PIB DEP</strong>: Producto Interno Bruto del departamento, mide la actividad económica regional.</p></li>
+</ol>
+</section>
+<section id="librerias">
+<h2>Librerias<a class="headerlink" href="#librerias" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;finalpymes.xlsx&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="descripcion-general">
+<h1>Descripción General<a class="headerlink" href="#descripcion-general" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(141621, 29)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este conjunto de datos está conformado por 29 columnas que incluyen variables financieras y macroeconómicas como activos, pasivos, rotaciones, tasas de empleo y desempeño financiero, entre otras, las cuales son claves para evaluar el éxito de las PYMEs. Además, cuenta con 141,621 registros.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Estado actual</th>
+      <th>NIT</th>
+      <th>Concepto del Revisor fiscal</th>
+      <th>Tiene Revisor fiscal?</th>
+      <th>Tipo societario</th>
+      <th>años</th>
+      <th>Departamento</th>
+      <th>Fecha de Corte</th>
+      <th>CIIU</th>
+      <th>Total de activos</th>
+      <th>...</th>
+      <th>Generación Efectivo</th>
+      <th>FLC</th>
+      <th>FDC/FLC</th>
+      <th>SD</th>
+      <th>FDC</th>
+      <th>Generación FLC</th>
+      <th>Tasa de Desempleo</th>
+      <th>Tasa de Ocupación</th>
+      <th>PIB</th>
+      <th>PIB DEP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ACTIVA</td>
+      <td>800000268</td>
+      <td>03. LIMPIO</td>
+      <td>SI</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>30.0</td>
+      <td>ATLANTICO</td>
+      <td>2017</td>
+      <td>Actividades inmobiliarias.</td>
+      <td>3766237.0</td>
+      <td>...</td>
+      <td>-1.131487</td>
+      <td>-40772.0</td>
+      <td>1.000000</td>
+      <td>0.0</td>
+      <td>-40772.0</td>
+      <td>-1.131487</td>
+      <td>7.557648</td>
+      <td>11.548318</td>
+      <td>8535.557383</td>
+      <td>36782.627008</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ACTIVA</td>
+      <td>800000276</td>
+      <td>03. LIMPIO</td>
+      <td>SI</td>
+      <td>01. SOCIEDAD ANÓNIMA</td>
+      <td>30.0</td>
+      <td>SANTANDER</td>
+      <td>2017</td>
+      <td>Agricultura, ganadería, caza, silvicultura y p...</td>
+      <td>158570380.0</td>
+      <td>...</td>
+      <td>0.004369</td>
+      <td>-14525925.0</td>
+      <td>1.000000</td>
+      <td>0.0</td>
+      <td>-14525925.0</td>
+      <td>9.366386</td>
+      <td>7.630040</td>
+      <td>211.472511</td>
+      <td>5140.802275</td>
+      <td>49333.910887</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ACTIVA</td>
+      <td>800000313</td>
+      <td>03. LIMPIO</td>
+      <td>SI</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>30.0</td>
+      <td>BOGOTA D.C.</td>
+      <td>2017</td>
+      <td>Industrias manufactureras.</td>
+      <td>4973845.0</td>
+      <td>...</td>
+      <td>-18.713938</td>
+      <td>-134970.0</td>
+      <td>1.852263</td>
+      <td>115030.0</td>
+      <td>-250000.0</td>
+      <td>-10.962476</td>
+      <td>8.729730</td>
+      <td>173.337730</td>
+      <td>19523.998522</td>
+      <td>212289.141969</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ACTIVA</td>
+      <td>800000439</td>
+      <td>03. LIMPIO</td>
+      <td>SI</td>
+      <td>03. SOCIEDAD LIMITADA</td>
+      <td>30.0</td>
+      <td>CUNDINAMARCA</td>
+      <td>2017</td>
+      <td>Comercio al por mayor y al por menor; reparaci...</td>
+      <td>2969939.0</td>
+      <td>...</td>
+      <td>-1.449247</td>
+      <td>-81721.0</td>
+      <td>5.966667</td>
+      <td>405881.0</td>
+      <td>-487602.0</td>
+      <td>-0.438714</td>
+      <td>8.729730</td>
+      <td>227.644906</td>
+      <td>8523.010078</td>
+      <td>49985.621838</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ACTIVA</td>
+      <td>800000457</td>
+      <td>03. LIMPIO</td>
+      <td>SI</td>
+      <td>03. SOCIEDAD LIMITADA</td>
+      <td>30.0</td>
+      <td>BOGOTA D.C.</td>
+      <td>2017</td>
+      <td>Actividades profesionales, científicas y técni...</td>
+      <td>5687179.0</td>
+      <td>...</td>
+      <td>1.461836</td>
+      <td>628069.0</td>
+      <td>1.000000</td>
+      <td>0.0</td>
+      <td>628069.0</td>
+      <td>1.461836</td>
+      <td>8.729730</td>
+      <td>78.165053</td>
+      <td>83519.076723</td>
+      <td>212289.141969</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 29 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Estado actual&#39;, &#39;NIT&#39;, &#39;Concepto del Revisor fiscal&#39;,
+       &#39;Tiene Revisor fiscal?&#39;, &#39;Tipo societario&#39;, &#39;años&#39;, &#39;Departamento&#39;,
+       &#39;Fecha de Corte&#39;, &#39; CIIU&#39;, &#39;Total de activos &#39;, &#39;Total pasivos &#39;,
+       &#39;Razón corriente&#39;, &#39;Rotación inventario producto terminado&#39;,
+       &#39;Rotación cartera&#39;, &#39;Rotación proveedores&#39;, &#39;Productividad KTNO&#39;, &#39;ROA&#39;,
+       &#39;ROE&#39;, &#39;Nivel de endeudamiento&#39;, &#39;Generación Efectivo&#39;, &#39;FLC&#39;,
+       &#39;FDC/FLC&#39;, &#39;SD&#39;, &#39;FDC&#39;, &#39;Generación FLC&#39;, &#39;Tasa de Desempleo&#39;,
+       &#39;Tasa de Ocupación&#39;, &#39;PIB&#39;, &#39;PIB DEP&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 141621 entries, 0 to 141620
+Data columns (total 29 columns):
+ #   Column                                  Non-Null Count   Dtype  
+---  ------                                  --------------   -----  
+ 0   Estado actual                           141621 non-null  object 
+ 1   NIT                                     141621 non-null  int64  
+ 2   Concepto del Revisor fiscal             141621 non-null  object 
+ 3   Tiene Revisor fiscal?                   141621 non-null  object 
+ 4   Tipo societario                         141621 non-null  object 
+ 5   años                                    141497 non-null  float64
+ 6   Departamento                            141621 non-null  object 
+ 7   Fecha de Corte                          141621 non-null  int64  
+ 8    CIIU                                   141621 non-null  object 
+ 9   Total de activos                        141620 non-null  float64
+ 10  Total pasivos                           141620 non-null  float64
+ 11  Razón corriente                         139976 non-null  float64
+ 12  Rotación inventario producto terminado  102820 non-null  float64
+ 13  Rotación cartera                        131802 non-null  float64
+ 14  Rotación proveedores                    102820 non-null  float64
+ 15  Productividad KTNO                      131802 non-null  float64
+ 16  ROA                                     141611 non-null  float64
+ 17  ROE                                     141611 non-null  float64
+ 18  Nivel de endeudamiento                  141610 non-null  float64
+ 19  Generación Efectivo                     140490 non-null  float64
+ 20  FLC                                     141621 non-null  float64
+ 21  FDC/FLC                                 132551 non-null  float64
+ 22  SD                                      132551 non-null  float64
+ 23  FDC                                     132551 non-null  float64
+ 24  Generación FLC                          140490 non-null  float64
+ 25  Tasa de Desempleo                       140391 non-null  float64
+ 26  Tasa de Ocupación                       133180 non-null  float64
+ 27  PIB                                     141607 non-null  float64
+ 28  PIB DEP                                 141621 non-null  float64
+dtypes: float64(21), int64(2), object(6)
+memory usage: 31.3+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<p>El conjunto de datos consta de variables numéricas y categóricas que incluyen información financiera, operativa y macroeconómica. Entre las variables destacan el NIT, tipo societario, estado actual, total de activos, pasivos, razón corriente, ROA, ROE, rotación de inventarios, cartera y proveedores, productividad KTNO, y datos macroeconómicos como el PIB y PIB departamental. Algunas columnas tienen valores nulos, como “Razón corriente” (139,976 no nulos) y “Rotación inventario” (102,820 no nulos).</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="variables">
+<h1>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h1>
+<section id="variables-categoricas">
+<h2>Variables Categoricas<a class="headerlink" href="#variables-categoricas" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Estado actual</th>
+      <th>Concepto del Revisor fiscal</th>
+      <th>Tiene Revisor fiscal?</th>
+      <th>Tipo societario</th>
+      <th>Departamento</th>
+      <th>CIIU</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>141621</td>
+      <td>141621</td>
+      <td>141621</td>
+      <td>141621</td>
+      <td>141621</td>
+      <td>141621</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>6</td>
+      <td>6</td>
+      <td>2</td>
+      <td>8</td>
+      <td>25</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>ACTIVA</td>
+      <td>03. LIMPIO</td>
+      <td>SI</td>
+      <td>08. SOCIEDAD POR ACCIONES SIMPLIFICADA SAS</td>
+      <td>BOGOTA D.C.</td>
+      <td>Comercio al por mayor y al por menor; reparaci...</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>136052</td>
+      <td>121338</td>
+      <td>125650</td>
+      <td>98179</td>
+      <td>60258</td>
+      <td>36820</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_bar_distribution</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">):</span>
+    <span class="n">value_counts</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;cool&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">value_counts</span><span class="p">))</span> 
+    <span class="n">bars</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+        <span class="n">value_counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> 
+        <span class="n">value_counts</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> 
+        <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> 
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">bar</span> <span class="ow">in</span> <span class="n">bars</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()),</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span>
+        <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_bar_distribution</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Estado actual&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución por estado&#39;</span><span class="p">,</span> <span class="s1">&#39;Estado actual&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de empresas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7b33cd2071d0ef56e987a57447bdc47057984f7db1b7e6fdcc3f4576cacfadc2.png" src="_images/7b33cd2071d0ef56e987a57447bdc47057984f7db1b7e6fdcc3f4576cacfadc2.png" />
+</div>
+</div>
+<p>El gráfico muestra la distribución de empresas según su estado actual, utilizando un diagrama de barras. El estado “ACTIVA” tiene una cantidad abrumadora de empresas, alcanzando las 136,052, lo que representa la mayoría de las empresas en la base de datos. Las categorías de “ACUERDO DE REORGANIZACIÓN” y “ACUERDO DE REESTRUCTURACIÓN” también tienen una presencia significativa, con 4,215 y 1,015 empresas respectivamente. En contraste, las categorías “EN ETAPA PREOPERATIVA”, “CONCORDATO EN EJECUCIÓN” y “CONCORDATO EN TRÁMITE” tienen una cantidad mucho menor de empresas, con 265, 62 y 12 respectivamente. Esta distribución indica que la mayoría de las empresas están en estado activo, mientras que las demás categorías son considerablemente menos representadas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_bar_distribution</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Concepto del Revisor fiscal&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución revisor fiscal&#39;</span><span class="p">,</span> <span class="s1">&#39;Concepto del revisor fiscal&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de empresas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/833e2a7401fdcc2804496d3b722031d763688f91220f19d7cbb73a072f0d8dda.png" src="_images/833e2a7401fdcc2804496d3b722031d763688f91220f19d7cbb73a072f0d8dda.png" />
+</div>
+</div>
+<p>El gráfico muestra la distribución de empresas según el concepto del revisor fiscal. El estado “LIMPIO” es claramente dominante, con 121,338 empresas, lo que representa la gran mayoría de la base de datos. A continuación, “NO APLICA” tiene 15,970 empresas, una cifra considerablemente menor, pero aún destacada. Las otras categorías, como “CON SALVEDAD” (1,999), “FALTANTE” (1,862), “NEGATIVO” (280) y “ABSTENCIÓN DE OPINIÓN” (172), tienen una representación significativamente más baja, indicando que las opiniones fiscales negativas o en abstención son relativamente poco frecuentes en comparación con las opiniones “LIMPIAS”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_bar_distribution</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Tiene Revisor fiscal?&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución tenencia de revisor&#39;</span><span class="p">,</span> <span class="s1">&#39;Tenencia de revisor&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de empresas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/573a737934266e2f56a02d669491cba2ddd6f9a9c242d454bb6825367ee1bb72.png" src="_images/573a737934266e2f56a02d669491cba2ddd6f9a9c242d454bb6825367ee1bb72.png" />
+</div>
+</div>
+<p>El gráfico muestra la distribución de empresas según la tenencia de revisor. La categoría “SI” domina ampliamente, con 125,650 empresas, lo que indica que la gran mayoría de las empresas en la base de datos cuentan con un revisor. En cambio, la categoría “NO” tiene solo 15,971 empresas, representando una proporción mucho menor de empresas sin revisor. Esta distribución sugiere que, en general, las empresas tienden a cumplir con la normativa de tener un revisor fiscal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_bar_distribution_horizontal</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">xlabel</span><span class="p">,</span> <span class="n">ylabel</span><span class="p">):</span>
+    <span class="n">value_counts</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;cool&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">value_counts</span><span class="p">))</span>
+    <span class="n">bars</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span>
+        <span class="n">value_counts</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+        <span class="n">value_counts</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">bar</span> <span class="ow">in</span> <span class="n">bars</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span>  
+            <span class="n">bar</span><span class="o">.</span><span class="n">get_y</span><span class="p">()</span> <span class="o">+</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="n">get_width</span><span class="p">())),</span>
+            <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span>
+        <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">xlabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">ylabel</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_bar_distribution_horizontal</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución por departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de Personas&#39;</span><span class="p">,</span> <span class="s1">&#39;Departamento&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/98cba058f8f5cc1ad251e623ea2750a23cc56b7f8fc7ae6f71b9ef3b71241933.png" src="_images/98cba058f8f5cc1ad251e623ea2750a23cc56b7f8fc7ae6f71b9ef3b71241933.png" />
+</div>
+</div>
+<p>El gráfico muestra la distribución de personas por departamento en Colombia, con una clara predominancia de Bogotá D.C., que supera las 60,000 personas. A continuación, los departamentos de Antioquia y Valle siguen con 24,476 y 13,394 personas respectivamente, siendo las tres regiones con la mayor concentración de personas. Otros departamentos, como Atlántico (8,659) y Cundinamarca (7,316), también presentan cifras destacadas. Por otro lado, departamentos como Chocó, La Guajira y Caquetá tienen una cantidad mucho menor de personas, con 86, 192 y 200 respectivamente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_bar_distribution_horizontal</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39; CIIU&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución por departamento&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de Personas&#39;</span><span class="p">,</span> <span class="s1">&#39;Departamento&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\KELLY\AppData\Local\Temp\ipykernel_115552\3917454676.py:23: UserWarning: Tight layout not applied. The left and right margins cannot be made large enough to accommodate all Axes decorations.
+  plt.tight_layout()
+</pre></div>
+</div>
+<img alt="_images/d787495fd2079bdd0588f5cea2af0d2c8394d790498c1993e01e3d1ba4919337.png" src="_images/d787495fd2079bdd0588f5cea2af0d2c8394d790498c1993e01e3d1ba4919337.png" />
+</div>
+</div>
+<p>El gráfico presenta la distribución de personas por diferentes actividades económicas. Se observa una notable concentración de personas en el sector de <strong>comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas</strong>, con 36,820 personas, seguida por <strong>construcción</strong> (22,694 personas) y <strong>actividades profesionales, científicas y técnicas</strong> (18,546 personas). Otros sectores como <strong>industria manufacturera</strong> y <strong>agricultura, ganadería, caza, silvicultura y pesca</strong> también tienen cifras destacadas con 18,164 y 8,946 personas respectivamente. Sin embargo, los sectores como <strong>educación</strong> (832 personas) y <strong>actividades de organizaciones y órganos extraterritoriales</strong> (14 personas) presentan una menor concentración.</p>
+</section>
+<section id="variables-numericas">
+<h2>Variables Númericas<a class="headerlink" href="#variables-numericas" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>NIT</th>
+      <th>años</th>
+      <th>Fecha de Corte</th>
+      <th>Total de activos</th>
+      <th>Total pasivos</th>
+      <th>Razón corriente</th>
+      <th>Rotación inventario producto terminado</th>
+      <th>Rotación cartera</th>
+      <th>Rotación proveedores</th>
+      <th>Productividad KTNO</th>
+      <th>...</th>
+      <th>Generación Efectivo</th>
+      <th>FLC</th>
+      <th>FDC/FLC</th>
+      <th>SD</th>
+      <th>FDC</th>
+      <th>Generación FLC</th>
+      <th>Tasa de Desempleo</th>
+      <th>Tasa de Ocupación</th>
+      <th>PIB</th>
+      <th>PIB DEP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1.416210e+05</td>
+      <td>141497.000000</td>
+      <td>141621.000000</td>
+      <td>1.416200e+05</td>
+      <td>1.416200e+05</td>
+      <td>1.399760e+05</td>
+      <td>1.028200e+05</td>
+      <td>1.318020e+05</td>
+      <td>1.028200e+05</td>
+      <td>1.318020e+05</td>
+      <td>...</td>
+      <td>140490.000000</td>
+      <td>1.416210e+05</td>
+      <td>1.325510e+05</td>
+      <td>1.325510e+05</td>
+      <td>1.325510e+05</td>
+      <td>1.404900e+05</td>
+      <td>140391.000000</td>
+      <td>133180.000000</td>
+      <td>141607.000000</td>
+      <td>141621.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>8.663054e+08</td>
+      <td>19.252260</td>
+      <td>2020.340868</td>
+      <td>1.870048e+07</td>
+      <td>9.269844e+06</td>
+      <td>3.542135e+02</td>
+      <td>5.195553e+04</td>
+      <td>2.498015e+05</td>
+      <td>7.022245e+04</td>
+      <td>5.155356e+02</td>
+      <td>...</td>
+      <td>-3.742813</td>
+      <td>4.973162e+04</td>
+      <td>2.592954e+01</td>
+      <td>6.523002e+05</td>
+      <td>-5.991656e+05</td>
+      <td>-6.107715e+01</td>
+      <td>12.047581</td>
+      <td>154.743101</td>
+      <td>38549.956253</td>
+      <td>164548.698077</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>4.087900e+07</td>
+      <td>13.166765</td>
+      <td>1.907594</td>
+      <td>1.395339e+08</td>
+      <td>9.622129e+07</td>
+      <td>3.423888e+04</td>
+      <td>1.339897e+07</td>
+      <td>2.176889e+07</td>
+      <td>8.729487e+06</td>
+      <td>1.121748e+05</td>
+      <td>...</td>
+      <td>2000.466879</td>
+      <td>2.234453e+07</td>
+      <td>9.069926e+03</td>
+      <td>2.041476e+07</td>
+      <td>1.320598e+07</td>
+      <td>1.742533e+04</td>
+      <td>3.573952</td>
+      <td>133.417436</td>
+      <td>37322.515846</td>
+      <td>104461.698562</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>8.000001e+08</td>
+      <td>0.000000</td>
+      <td>2017.000000</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>-2.098427e+07</td>
+      <td>...</td>
+      <td>-513276.000000</td>
+      <td>-2.372958e+09</td>
+      <td>-1.619655e+04</td>
+      <td>0.000000e+00</td>
+      <td>-2.372958e+09</td>
+      <td>-6.281511e+06</td>
+      <td>3.209824</td>
+      <td>0.029873</td>
+      <td>13.451994</td>
+      <td>3652.635931</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>8.300328e+08</td>
+      <td>10.000000</td>
+      <td>2019.000000</td>
+      <td>4.143675e+06</td>
+      <td>1.207430e+06</td>
+      <td>1.178524e+00</td>
+      <td>7.118213e-01</td>
+      <td>3.579092e+01</td>
+      <td>3.226601e+01</td>
+      <td>6.095384e-02</td>
+      <td>...</td>
+      <td>-0.332381</td>
+      <td>-2.542350e+05</td>
+      <td>1.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>-4.961745e+05</td>
+      <td>-6.732204e-01</td>
+      <td>8.971398</td>
+      <td>35.379945</td>
+      <td>8440.661544</td>
+      <td>57797.345980</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>8.920030e+08</td>
+      <td>16.000000</td>
+      <td>2020.000000</td>
+      <td>8.318130e+06</td>
+      <td>3.277588e+06</td>
+      <td>1.977679e+00</td>
+      <td>4.425365e+01</td>
+      <td>8.439409e+01</td>
+      <td>7.615839e+01</td>
+      <td>2.688085e-01</td>
+      <td>...</td>
+      <td>0.011560</td>
+      <td>5.560000e+02</td>
+      <td>1.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>-1.036300e+04</td>
+      <td>1.498066e-01</td>
+      <td>11.722654</td>
+      <td>117.635000</td>
+      <td>22796.859394</td>
+      <td>161904.679773</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>9.004209e+08</td>
+      <td>26.000000</td>
+      <td>2022.000000</td>
+      <td>1.763481e+07</td>
+      <td>8.033026e+06</td>
+      <td>4.328762e+00</td>
+      <td>1.487696e+02</td>
+      <td>2.063634e+02</td>
+      <td>1.788139e+02</td>
+      <td>8.411050e-01</td>
+      <td>...</td>
+      <td>0.632728</td>
+      <td>4.332520e+05</td>
+      <td>1.000000e+00</td>
+      <td>2.534450e+04</td>
+      <td>2.907150e+05</td>
+      <td>1.350429e+00</td>
+      <td>13.323139</td>
+      <td>243.651000</td>
+      <td>64238.892795</td>
+      <td>243835.887573</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>9.017396e+08</td>
+      <td>335.000000</td>
+      <td>2023.000000</td>
+      <td>2.593985e+10</td>
+      <td>2.141922e+10</td>
+      <td>7.427874e+06</td>
+      <td>4.283006e+09</td>
+      <td>5.383320e+09</td>
+      <td>1.656346e+09</td>
+      <td>1.329694e+07</td>
+      <td>...</td>
+      <td>263267.000000</td>
+      <td>5.830583e+09</td>
+      <td>3.301999e+06</td>
+      <td>5.901266e+09</td>
+      <td>1.371313e+09</td>
+      <td>3.516841e+05</td>
+      <td>23.242521</td>
+      <td>584.526000</td>
+      <td>124683.823762</td>
+      <td>345847.243838</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 23 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;NIT&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NIT
+860003375    8
+900051963    8
+830065828    8
+800051410    8
+800221720    8
+            ..
+900560474    1
+830051566    1
+900558368    1
+900473156    1
+901739550    1
+Name: count, Length: 32306, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>El resultado del método <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> para la columna <strong>NIT</strong> muestra la frecuencia con la que cada número de identificación tributaria (NIT) aparece en la base de datos. Lla base de datos contiene una gran cantidad de NITs únicos, con 32,306 valores diferentes. Este comportamiento sugiere que la base de datos incluye un número considerable de empresas o entidades distintas, con pocos registros repetidos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_bar_distribution</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;Fecha de Corte&#39;</span><span class="p">,</span> <span class="s1">&#39;Distribución por Fecha de Corte&#39;</span><span class="p">,</span> <span class="s1">&#39;Año&#39;</span><span class="p">,</span> <span class="s1">&#39;Cantidad de empresas&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/07d53a112b16da4c11b3e3bcc237c6077d5f5cb46274c9c1439027bc38d01bd8.png" src="_images/07d53a112b16da4c11b3e3bcc237c6077d5f5cb46274c9c1439027bc38d01bd8.png" />
+</div>
+</div>
+<p>El gráfico muestra la distribución de empresas según el año de corte. Se observa que la cantidad de empresas aumenta progresivamente desde 2017 hasta 2022. En 2017, hay 14,596 empresas, mientras que en 2018 la cifra es ligeramente inferior con 14,022. A partir de 2019, la cantidad de empresas aumenta considerablemente, alcanzando un máximo de 24,290 en 2022. Sin embargo, en 2023 la cifra disminuye ligeramente a 22,742, pero sigue siendo bastante alta.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data1</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Total de activos &#39;</span><span class="p">]</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Total pasivos &#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;rocket&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Dataset 1&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;rocket&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">6</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Dataset 2&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparación de Conjuntos de Datos&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">data1</span><span class="p">,</span> <span class="n">data2</span><span class="p">],</span> <span class="n">palette</span><span class="o">=</span><span class="p">[</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;rocket&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s2">&quot;rocket&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[</span><span class="mi">6</span><span class="p">]])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;Dataset 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Dataset 2&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Conjuntos de Datos (Boxplot)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6bf3a38133489ad4a5eb48b32c0de8efd196eb2faa991c93d5052c81e4910765.png" src="_images/6bf3a38133489ad4a5eb48b32c0de8efd196eb2faa991c93d5052c81e4910765.png" />
+</div>
+</div>
+<p>El gráfico muestra una comparación entre dos conjuntos de datos, <strong>Dataset 1</strong> y <strong>Dataset 2</strong>, que representan las columnas <strong>“Total de activos”</strong> y <strong>“Total pasivos”</strong> de la base de datos, respectivamente.</p>
+<p>En el primer gráfico, se presenta un <strong>histograma</strong> que ilustra la frecuencia de los valores de cada conjunto de datos. Se observa que <strong>Dataset 1</strong> (Total de activos) tiene una distribución sesgada hacia valores cercanos a cero, con una concentración significativa de frecuencias en ese rango. Por otro lado, <strong>Dataset 2</strong> (Total pasivos) presenta una distribución similar, pero con una mayor dispersión, lo que sugiere que hay una mayor variabilidad en los pasivos en comparación con los activos.</p>
+<p>En el segundo gráfico, un <strong>boxplot</strong> compara la distribución de ambos conjuntos de datos. Ambos conjuntos muestran una gran cantidad de <strong>outliers</strong>, con <strong>Dataset 1</strong> (activos) concentrado en valores más bajos y con algunos valores extremadamente altos, mientras que <strong>Dataset 2</strong> (pasivos) presenta una dispersión más amplia, con más valores extremos, lo que puede indicar pasivos extremadamente altos en algunas empresas.</p>
+<section id="liquidez">
+<h3>Liquidez<a class="headerlink" href="#liquidez" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data3</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Generación Efectivo&#39;</span><span class="p">]</span>
+<span class="n">data4</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Razón corriente&#39;</span><span class="p">]</span>
+<span class="n">data5</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Rotación inventario producto terminado&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data3</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Generación Efectivo&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de Generación Efectivo&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Generación Efectivo (Boxplot)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data4</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Razón corriente&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de Razón corriente&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Razón corriente (Boxplot)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data5</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rotación inventario&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;CHistograma de Rotación inventario &#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Rotación inventario producto terminado (Boxplot)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9785320b401fc099f893978e8e465482c67e038837368240ff830300203759d8.png" src="_images/9785320b401fc099f893978e8e465482c67e038837368240ff830300203759d8.png" />
+<img alt="_images/21e864e764064c3ee947d47a7e8aa1d7460c170172c8f4a2eb5a1fe31f4ecf51.png" src="_images/21e864e764064c3ee947d47a7e8aa1d7460c170172c8f4a2eb5a1fe31f4ecf51.png" />
+<img alt="_images/f5321524f65e47ba19f3effd4dff0e8130e60b799095c96d23f0e219cfdd3beb.png" src="_images/f5321524f65e47ba19f3effd4dff0e8130e60b799095c96d23f0e219cfdd3beb.png" />
+</div>
+</div>
+<p>Los gráficos que muestras son histogramas y boxplots de varias métricas financieras y operativas, como <strong>Generación Efectivo</strong>, <strong>Razón corriente</strong>, y <strong>Rotación de inventario</strong>.</p>
+<ol class="arabic simple">
+<li><p><strong>Generación Efectivo</strong>: El histograma y el boxplot indican una alta concentración de valores cerca de cero, lo que sugiere que la mayoría de las empresas tienen una generación de efectivo baja o nula. El boxplot también muestra una gran cantidad de <strong>outliers</strong> en los valores positivos, lo que indica la presencia de algunos valores extremos o empresas con generación de efectivo significativamente mayor.</p></li>
+<li><p><strong>Razón corriente</strong>: Al igual que la <strong>Generación Efectivo</strong>, la mayoría de las empresas tienen una <strong>Razón corriente</strong> cercana a cero, lo que podría indicar que muchas empresas tienen problemas de liquidez o recursos limitados para cubrir sus pasivos corrientes. El boxplot revela una dispersión notable con outliers, lo que podría reflejar algunos casos excepcionales de empresas con una razón corriente extremadamente alta.</p></li>
+<li><p><strong>Rotación de inventario</strong>: El comportamiento es similar a las métricas anteriores, con un histograma que muestra una alta concentración de empresas con una <strong>Rotación de inventario</strong> baja o cercana a cero. El boxplot también revela outliers que pueden indicar empresas con una rotación de inventario muy alta, lo que podría ser característico de empresas con una gestión eficiente de su inventario.</p></li>
+</ol>
+<p>En general, los tres gráficos muestran que la mayoría de las empresas en la base de datos tienen valores bajos en estas métricas, pero también existen algunos valores extremos que podrían indicar un desempeño significativamente diferente en ciertos casos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data3</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Rotación cartera&#39;</span><span class="p">]</span>
+<span class="n">data4</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Rotación proveedores&#39;</span><span class="p">]</span>
+<span class="n">data5</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Productividad KTNO&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data3</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rotación cartera&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de Rotación cartera&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Rotación cartera (Boxplot)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data4</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Rotación proveedores&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de Rotación proveedores&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Rotación proveedores (Boxplot)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data5</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Productividad KTNO&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de Productividad KTNO&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Productividad KTNO (Boxplot)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/61ba41a8a3aef8cb7218793b1c652670ac9c8480719a3f51f83b82a3f5975d27.png" src="_images/61ba41a8a3aef8cb7218793b1c652670ac9c8480719a3f51f83b82a3f5975d27.png" />
+<img alt="_images/e67b00fb75a1cda257a8cfecdd2855422ff1be57417c4635d126c02d47e68bbf.png" src="_images/e67b00fb75a1cda257a8cfecdd2855422ff1be57417c4635d126c02d47e68bbf.png" />
+<img alt="_images/3a9951beeacbb1449bc8dc57ec002c44eb66967d4d412def5d5c9a7b984a9c05.png" src="_images/3a9951beeacbb1449bc8dc57ec002c44eb66967d4d412def5d5c9a7b984a9c05.png" />
+</div>
+</div>
+<p>Los gráficos muestran una serie de métricas relacionadas con las empresas en la base de datos: <strong>Rotación cartera</strong>, <strong>Rotación proveedores</strong>, y <strong>Productividad KTNO</strong>.</p>
+<ol class="arabic simple">
+<li><p><strong>Rotación cartera</strong>:</p>
+<ul class="simple">
+<li><p>El <strong>histograma</strong> muestra que la mayoría de las empresas tienen una rotación de cartera cercana a cero, lo que sugiere que las empresas no están cobrando con frecuencia sus cuentas por cobrar, o que tienen un ciclo de cobro lento.</p></li>
+<li><p>El <strong>boxplot</strong> revela una gran cantidad de <strong>outliers</strong> con valores extremadamente altos en la rotación de cartera, lo que podría indicar que algunas empresas tienen una rotación mucho mayor en comparación con otras.</p></li>
+</ul>
+</li>
+<li><p><strong>Rotación proveedores</strong>:</p>
+<ul class="simple">
+<li><p>Similar a la rotación de cartera, el <strong>histograma</strong> muestra una alta concentración de valores cercanos a cero, lo que podría indicar que las empresas están pagando a sus proveedores muy lentamente o en intervalos largos.</p></li>
+<li><p>El <strong>boxplot</strong> también indica varios <strong>outliers</strong> en valores muy altos, lo que refleja la presencia de algunas empresas con una rotación de proveedores excepcionalmente alta.</p></li>
+</ul>
+</li>
+<li><p><strong>Productividad KTNO</strong>:</p>
+<ul class="simple">
+<li><p>El <strong>histograma</strong> para la productividad KTNO muestra que la mayoría de las empresas tienen valores bajos o cercanos a cero en términos de productividad.</p></li>
+<li><p>El <strong>boxplot</strong> muestra una dispersión considerable con <strong>outliers</strong> negativos, sugiriendo que algunas empresas tienen una productividad muy baja o incluso valores negativos, lo que podría estar asociado con pérdidas o bajo rendimiento en ciertas empresas.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="rentabilidad">
+<h3>Rentabilidad<a class="headerlink" href="#rentabilidad" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data6</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;ROA&#39;</span><span class="p">]</span>
+<span class="n">data7</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;ROE&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data6</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ROA&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de ROA&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de ROA (Boxplot)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data7</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ROE&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de ROE&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data7</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de ROE(Boxplot)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c4ccad3834afe3f0e8111ce63580c72ab67637e9cff9ea51b0dccfe170926490.png" src="_images/c4ccad3834afe3f0e8111ce63580c72ab67637e9cff9ea51b0dccfe170926490.png" />
+<img alt="_images/75304909c6287c69e18501d73444786dc65704f527cf059a722f5b783fa4b50a.png" src="_images/75304909c6287c69e18501d73444786dc65704f527cf059a722f5b783fa4b50a.png" />
+</div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>ROA (Retorno sobre Activos)</strong>:</p>
+<ul class="simple">
+<li><p>El <strong>histograma</strong> revela que la mayoría de las empresas tienen un <strong>ROA</strong> muy cercano a cero, lo que sugiere que muchas de las empresas no están obteniendo un rendimiento significativo en relación con sus activos.</p></li>
+<li><p>El <strong>boxplot</strong> muestra una gran concentración de valores bajos, con varios <strong>outliers</strong> en valores positivos, indicando que algunas empresas tienen un ROA significativamente mayor que otras. Estos valores extremos podrían reflejar empresas con rendimientos excepcionales.</p></li>
+</ul>
+</li>
+<li><p><strong>ROE (Retorno sobre el Patrimonio)</strong>:</p>
+<ul class="simple">
+<li><p>El <strong>histograma</strong> para el <strong>ROE</strong> muestra una distribución similar, con la mayoría de los valores cercanos a cero, lo que indica que muchas empresas no están generando una rentabilidad destacada en relación con su patrimonio.</p></li>
+<li><p>El <strong>boxplot</strong> también evidencia valores muy bajos y algunos valores extremos en el ROE, lo que podría indicar la presencia de empresas con un rendimiento extraordinariamente negativo o positivo.</p></li>
+</ul>
+</li>
+</ol>
+<p>ambos indicadores muestran una tendencia a tener valores cercanos a cero para la mayoría de las empresas, lo que refleja un rendimiento moderado en términos de rentabilidad sobre activos y patrimonio.</p>
+</section>
+<section id="endeudamiento">
+<h3>Endeudamiento<a class="headerlink" href="#endeudamiento" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data8</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Nivel de endeudamiento&#39;</span><span class="p">]</span>
+<span class="n">data9</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;SD&#39;</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data8</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Nivel de endeudamiento&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de Nivel de endeudamiento&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Nivel de endeudamiento (Boxplot)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data9</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;SD&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de Servicio de Deuda&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de Servicio de Deuda (Boxplot)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9fe9220d246b531ded12871a89ae375cb2494f95dca774c6f0b79e3218f3ed61.png" src="_images/9fe9220d246b531ded12871a89ae375cb2494f95dca774c6f0b79e3218f3ed61.png" />
+<img alt="_images/9dc2333d2aa94e0d385e2d2da22ba1f4da5bb79a4c6ce176b5c3ae596941985f.png" src="_images/9dc2333d2aa94e0d385e2d2da22ba1f4da5bb79a4c6ce176b5c3ae596941985f.png" />
+</div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Nivel de endeudamiento</strong>:</p>
+<ul class="simple">
+<li><p>El <strong>histograma</strong> muestra una gran concentración de empresas con un nivel de endeudamiento cercano a cero, lo que indica que muchas empresas tienen un nivel de deuda muy bajo o inexistente.</p></li>
+<li><p>El <strong>boxplot</strong> confirma que la mayoría de los valores se agrupan cerca de cero, pero también se observan <strong>outliers</strong> que representan empresas con niveles de endeudamiento significativamente más altos, lo que podría reflejar una estructura de capital con una mayor proporción de deuda.</p></li>
+</ul>
+</li>
+<li><p><strong>Servicio de deuda</strong>:</p>
+<ul class="simple">
+<li><p>El <strong>histograma</strong> muestra una distribución similar, con la mayoría de las empresas reportando un servicio de deuda muy bajo o nulo. Esto sugiere que muchas empresas tienen una carga financiera baja o no tienen deuda pendiente de pago.</p></li>
+<li><p>En el <strong>boxplot</strong>, también se aprecian varios <strong>outliers</strong> en valores altos, lo que indica que algunas empresas están enfrentando altos costos de servicio de deuda, lo cual podría reflejar una gran carga financiera para algunas de ellas.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="variable-objetivo">
+<h1>Variable objetivo<a class="headerlink" href="#variable-objetivo" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;FDC/FLC&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;FDC/FLC&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Histograma de Indicador FDC/FLC&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;FDC/FLC&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de FDC/FLC (Boxplot)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dfde4513615f3715c83ac351f9540e0120e33935eafdaaf2d78fda6a48b47902.png" src="_images/dfde4513615f3715c83ac351f9540e0120e33935eafdaaf2d78fda6a48b47902.png" />
+</div>
+</div>
+<p>El gráfico del <strong>Indicador FDC/FLC</strong> muestra  la mayoría de los valores se concentran cerca de cero, lo que sugiere que la variable tiene una prevalencia significativa de observaciones con valores bajos. Sin embargo, el boxplot revela la presencia de <strong>outliers</strong> con valores extremadamente altos, indicando que algunos casos son excepcionales o atípicos en comparación con la mayoría de los datos. Este patrón de distribución podría señalar una variable con pocos casos extremos que merecen una atención especial, mientras que la gran mayoría de las observaciones tienen valores cercanos a cero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;FDC/FLC&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#573d7f&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Distribución de FDC/FLC (Violin)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/40e6f32b71a4dde0924de136c783b2a695183ec2d30ab81f36d5e183e7b75fd8.png" src="_images/40e6f32b71a4dde0924de136c783b2a695183ec2d30ab81f36d5e183e7b75fd8.png" />
+</div>
+</div>
+<p>El gráfico resalta la <strong>asimetría</strong> de la distribución, ya que se observa una sección más ancha hacia la parte baja, mientras que la cola en valores altos es más estrecha. Esto confirma la presencia de <strong>outliers</strong> o valores extremos, que representan casos excepcionales o atípicos, aunque son mucho menos frecuentes que los valores cercanos a cero.</p>
+<section id="transformar-a-intervalos">
+<h2>Transformar a Intervalos<a class="headerlink" href="#transformar-a-intervalos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bins</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.67</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&lt;0&#39;</span><span class="p">,</span> <span class="s1">&#39;[0, 0.67)&#39;</span><span class="p">,</span> <span class="s1">&#39;[0.67, 0.80)&#39;</span><span class="p">,</span> <span class="s1">&#39;[0.80, 1)&#39;</span><span class="p">,</span> <span class="s1">&#39;[1, ∞)&#39;</span><span class="p">]</span>
+
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;FDC_FLC_categoria&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;FDC/FLC&#39;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conteo_categorias</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;FDC_FLC_categoria&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">conteo_categorias</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Categoría&#39;</span><span class="p">,</span> <span class="s1">&#39;Conteo&#39;</span><span class="p">]</span>
+<span class="n">conteo_categorias</span> <span class="o">=</span> <span class="n">conteo_categorias</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Categoría&#39;</span><span class="p">)</span>
+
+
+<span class="n">value_counts</span> <span class="o">=</span> <span class="n">conteo_categorias</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="s1">&#39;cool&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">value_counts</span><span class="p">))</span> 
+<span class="n">bars</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+        <span class="n">value_counts</span><span class="p">[</span><span class="s1">&#39;Categoría&#39;</span><span class="p">],</span> 
+        <span class="n">value_counts</span><span class="p">[</span><span class="s1">&#39;Conteo&#39;</span><span class="p">],</span> 
+        <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> 
+    <span class="p">)</span>
+<span class="k">for</span> <span class="n">bar</span> <span class="ow">in</span> <span class="n">bars</span><span class="p">:</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.1</span><span class="p">,</span>
+            <span class="nb">str</span><span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()),</span>
+            <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
+            <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span>
+    <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Conteo de Registros por Categoría&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Categoría&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Conteo&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/62135d9469a17a8336191821de7667fcc253d351aad2e1af930d7faa352ca776.png" src="_images/62135d9469a17a8336191821de7667fcc253d351aad2e1af930d7faa352ca776.png" />
+</div>
+</div>
+<p>Los registros están distribuidos en cinco categorías:</p>
+<ol class="arabic simple">
+<li><p><strong>&lt;0</strong>: 9,818 registros.</p></li>
+<li><p><strong>[0, 0.67)</strong>: 8,287 registros.</p></li>
+<li><p><strong>[0.67, 0.80)</strong>: 1,826 registros.</p></li>
+<li><p><strong>[0.80, 1)</strong>: 4,853 registros.</p></li>
+<li><p><strong>[1, ∞)</strong>: 107,767 registros.</p></li>
+</ol>
+<p>La categoría <strong>[1, ∞)</strong> tiene una <strong>gran mayoría</strong> de los registros, lo que indica que la mayoría de los valores del <strong>Indicador FDC/FLC</strong> caen dentro de este rango, sugiriendo una prevalencia de valores altos en el conjunto de datos. Las otras categorías tienen una cantidad mucho menor de registros, lo que resalta que solo un número pequeño de empresas tienen valores bajos o moderados en este indicador. Esta distribución refuerza la idea de que la mayoría de las empresas tienen un comportamiento <strong>positivo o elevado</strong> en términos de <strong>FDC/FLC</strong>.</p>
+<p>Distribución general de cada rango para FDC/FLC</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">categorias</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;FDC_FLC_categoria&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="c1"># Crear gráficos de violín por categoría</span>
+<span class="k">for</span> <span class="n">categoria</span> <span class="ow">in</span> <span class="n">categorias</span><span class="p">:</span>
+    <span class="n">df_categoria</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;FDC_FLC_categoria&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">categoria</span><span class="p">]</span>
+    
+    <span class="c1"># Crear el gráfico de violín</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span>
+        <span class="n">data</span><span class="o">=</span><span class="n">df_categoria</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s1">&#39;FDC/FLC&#39;</span><span class="p">,</span>
+        <span class="n">inner</span><span class="o">=</span><span class="s1">&#39;point&#39;</span><span class="p">,</span>  <span class="c1"># Mostrar todos los puntos dentro del gráfico</span>
+        <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span>  <span class="c1"># Cambiar el color del gráfico</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Personalización del gráfico</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Distribución de FDC/FLC para la Categoría </span><span class="si">{</span><span class="n">categoria</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;FDC/FLC&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    
+    <span class="c1"># Mostrar el gráfico</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7371c3bddba374dd00f2b12a6a87756d12336accaeeef6a387cd2d9dc8c9c1bd.png" src="_images/7371c3bddba374dd00f2b12a6a87756d12336accaeeef6a387cd2d9dc8c9c1bd.png" />
+<img alt="_images/3b89fbe295a7ca9589b3e6216d0b193a80f748c190a29eadc6320dff04366f54.png" src="_images/3b89fbe295a7ca9589b3e6216d0b193a80f748c190a29eadc6320dff04366f54.png" />
+<img alt="_images/469d0feef95290d367ce3ef541c77464a7bd96697cfbd14b0669d811a4eb8794.png" src="_images/469d0feef95290d367ce3ef541c77464a7bd96697cfbd14b0669d811a4eb8794.png" />
+<img alt="_images/daca46d7e0d228cc8b5c1a70c787f3e5d234e86e5f1f2421d3af59c700d22511.png" src="_images/daca46d7e0d228cc8b5c1a70c787f3e5d234e86e5f1f2421d3af59c700d22511.png" />
+<img alt="_images/60d4082699f2c6309c2ab903b5f002340466118d3ede737064d8a8f33c9065ca.png" src="_images/60d4082699f2c6309c2ab903b5f002340466118d3ede737064d8a8f33c9065ca.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Categoría [1, ∞)</strong>: El gráfico muestra que los valores de <strong>FDC/FLC</strong> en esta categoría están muy concentrados cerca de un valor máximo, lo que indica que la mayoría de los registros de esta categoría tienen valores muy altos para este indicador. La distribución es muy estrecha, lo que sugiere poca variabilidad.</p></li>
+<li><p><strong>Categoría [0, 0.67)</strong>: La distribución en esta categoría es más amplia, con valores que se distribuyen desde cero hasta aproximadamente 0.67. El gráfico de violín muestra que la mayoría de los valores están cerca del centro, indicando una concentración de registros con valores relativamente bajos, pero también una mayor dispersión en comparación con la categoría anterior.</p></li>
+<li><p><strong>Categoría [0.67, 0.80)</strong>: En esta categoría, la distribución muestra una ligera variabilidad, con una mayor concentración de valores alrededor del centro de la distribución, pero con algo de dispersión hacia valores superiores.</p></li>
+<li><p><strong>Categoría &lt;0</strong>: El gráfico en esta categoría revela que los valores de <strong>FDC/FLC</strong> son extremadamente bajos, con una concentración cerca de cero. Sin embargo, también se observan varios <strong>outliers</strong> muy negativos, lo que sugiere que algunas observaciones tienen valores inusualmente bajos para este indicador.</p></li>
+<li><p><strong>Categoría [0.80, 1)</strong>: En esta categoría, la distribución es estrecha, con una clara concentración de valores entre 0.80 y 1, indicando que los registros de esta categoría tienen valores altos pero no extremos.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Proyecto Superintendencia PYMEs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="EDA_PYMES%20%282%29.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modelos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exploración de datos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#pymes-colombia">Pymes Colombia</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicion-de-las-variables">Definición de las variables:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias">Librerias</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#descripcion-general">Descripción General</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-categoricas">Variables Categoricas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables-numericas">Variables Númericas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#liquidez">Liquidez</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rentabilidad">Rentabilidad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#endeudamiento">Endeudamiento</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-objetivo">Variable objetivo</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformar-a-intervalos">Transformar a Intervalos</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kelly Beltran Y Henry Saenz
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
